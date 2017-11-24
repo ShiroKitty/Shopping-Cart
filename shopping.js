@@ -1,7 +1,6 @@
 var start = new Vue({
     el: '#cart',
     data: {
-        itemsInCart: 0,
         cartItems: 
         [
             {name: 'RimWorld', numOrdered: 0, price: 29.99, total: 0, imgSrc: 'http://cdn.akamai.steamstatic.com/steam/apps/294100/header.jpg?t=1484073238'},
@@ -13,6 +12,22 @@ var start = new Vue({
         ]
     },
     methods: {
-
+        addToCart(item){
+            item.numOrdered++;
+            item.total = item.numOrdered * item.price;
+        },
+        removeFromCart(item){
+            item.numOrdered--;
+            if(item.numOrdered >= 0){
+                item.total = item.numOrdered * item.price;
+            }
+            if(item.numOrdered < 0){
+                item.numOrdered = 0;
+            }
+        }
     }
+});
+
+window.addEventListener("load", function onLoad(){
+
 });

@@ -17,7 +17,7 @@
 				<div class="row">
 					<div v-for="items in cartItems">
 						<div class="col-sm">
-							<img v-bind:src = "items.imgSrc">
+							<img v-bind:src="items.imgSrc" class="more" v-on:click="addToCart(items)">
 							<p>Price: ${{ items.price }}</p>
 						</div>
 					</div>
@@ -25,23 +25,22 @@
 				<table>
 					
 					<tr>
-						<th>Selected item</th>
+						<th>Title</th>
 						<th>Items in cart</th>
 						<th>Price</th>
 						<th>Add</th>
 						<th>Remove</th>
 					</tr>
 					<!-- More table rows added by Vuejs -->
-					<div v-for="rows in cartItems">
-						<tr>
-							<td><p>{{ rows.name }}</p></td>
-							<td><p>{{ rows.numOrdered }}</p></td>
-							<td><p>{{ rows.total }}</p></td>
-							<td><p>{{ rows.total }}</p></td>
-							<td><p>{{ rows.total }}</p></td>
-						</tr>
-					</div>
+					<tr v-for="rows in cartItems">
+						<td>{{ rows.name }}</td>
+						<td>{{ rows.numOrdered }}</td>
+						<td class="totalCost">{{ rows.total}}</td>
+						<td class="tBtn more" v-on:click="addToCart(rows)">+</td>
+						<td class="tBtn less" v-on:click="removeFromCart(rows)">-</td>
+					</tr>
 				</table>
+				<h2>Total: {{  }}</h2>
 			</div>
 		</div>
 		<script src="shopping.js"></script>

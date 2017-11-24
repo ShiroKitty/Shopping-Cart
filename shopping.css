@@ -24,9 +24,45 @@ img {
 
 img:hover {
     border: 5px solid #5DAEDD;
+    padding: -50px;
+    cursor: pointer;
 }
 
 /* Tables */
+table{
+    width: 86.67%;
+    margin-bottom: 20px;
+}
+table, th{
+    border: 2px solid black;
+}
+th{
+    background-color: #171A21;
+    text-align: center;
+}
+td {
+    background-color: #212121;
+    border-right: 2px solid black;
+    
+}
 th, td {
-    padding-left: 20px;
+    padding: 0px 20px 0px 20px;
+}
+tr:hover{
+    border: 2px solid #5DAEDD;
+}
+
+/* Faux Buttons */
+.tBtn{
+    text-align: center;
+    background-color: #212121;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.tBtn:hover {
+    background-color: #5DAEDD;
+    cursor: pointer;
 }
