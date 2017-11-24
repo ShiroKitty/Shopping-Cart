@@ -28,6 +28,18 @@ var start = new Vue({
     }
 });
 
+var changeTheme = new Vue({
+    el: '#title',
+    methods: {
+        steam(){
+            document.getElementById("cTheme").href = "cSteam.css";
+        },
+        steel(){
+            document.getElementById("cTheme").href = "cSteel.css";
+        }
+    }
+});
+
 window.addEventListener("load", function onLoad(){
 
 });

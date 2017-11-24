@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<!-- 
+			Developer: Tj Liggett 
+		-->
 		<meta charset="UTF-8">
 		<title>Shopping Cart - Steam Sale</title>
-
+		<!-- Bootstrap-->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-		<link rel="stylesheet" type="text/css" href="shopping.css">
+		<!-- Vuejs -->
 		<script src="https://unpkg.com/vue"></script>
+		<!-- Main stylesheet -->
+		<link rel="stylesheet" type="text/css" href="main.css">
+		<!-- Stylesheet responsible for changing color scheme -->
+		<link id="cTheme" rel="stylesheet" type="text/css" href="cSteam.css">
 	</head>
 	<body>
+		
 		<div class="container">
 			<div id="title">
 				<h1>Games Sale</h1>
+				<button class="btn btn-default" id="btnSteam" v-on:click="steam()">Steam</button>
+				<button class="btn btn-default" id="btnSteel" v-on:click="steel()">Steel</button>
 			</div>
 			<div id="cart">
 				<div class="row">
@@ -31,7 +41,7 @@
 						<th>Add</th>
 						<th>Remove</th>
 					</tr>
-					<!-- More table rows added by Vuejs -->
+					<!-- Table rows added by Vuejs -->
 					<tr v-for="rows in cartItems">
 						<td>{{ rows.name }}</td>
 						<td>{{ rows.numOrdered }}</td>
@@ -39,6 +49,7 @@
 						<td class="tBtn more" v-on:click="addToCart(rows)">+</td>
 						<td class="tBtn less" v-on:click="removeFromCart(rows)">-</td>
 					</tr>
+					<tr class="topB"></tr>
 				</table>
 				<h2>Total: {{  }}</h2>
 			</div>

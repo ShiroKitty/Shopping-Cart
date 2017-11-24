@@ -1,0 +1,49 @@
+
+#title {
+    padding: 10px 5px 5px 20px;
+    margin-bottom: 20px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    margin-top: -100px;
+}
+
+#cart{
+    margin-top: 100px;
+}
+
+/* Images */
+img {
+    width: 300px;
+}
+
+img:hover {
+    cursor: pointer;
+}
+
+/* Tables */
+table{
+    width: 86.67%;
+    margin-bottom: 20px;
+}
+
+th {
+    text-align: center;
+}
+th, td {
+    padding: 0px 20px 0px 20px;
+}
+
+/* Faux Buttons */
+.tBtn{
+    text-align: center;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.tBtn:hover {
+    cursor: pointer;
+}
