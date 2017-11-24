@@ -2,14 +2,47 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>title</title>
+		<title>Shopping Cart - Steam Sale</title>
 
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="shopping.css">
-    	<script src="https://unpkg.com/vue"></script>
+		<script src="https://unpkg.com/vue"></script>
 	</head>
 	<body>
-		<div id="display" v-if="seen">
-			<h1>{{message}}</h1>
+		<div class="container">
+			<div id="title">
+				<h1>Games Sale</h1>
+			</div>
+			<div id="cart">
+				<div class="row">
+					<div v-for="items in cartItems">
+						<div class="col-sm">
+							<img v-bind:src = "items.imgSrc">
+							<p>Price: ${{ items.price }}</p>
+						</div>
+					</div>
+				</div>
+				<table>
+					
+					<tr>
+						<th>Selected item</th>
+						<th>Items in cart</th>
+						<th>Price</th>
+						<th>Add</th>
+						<th>Remove</th>
+					</tr>
+					<!-- More table rows added by Vuejs -->
+					<div v-for="rows in cartItems">
+						<tr>
+							<td><p>{{ rows.name }}</p></td>
+							<td><p>{{ rows.numOrdered }}</p></td>
+							<td><p>{{ rows.total }}</p></td>
+							<td><p>{{ rows.total }}</p></td>
+							<td><p>{{ rows.total }}</p></td>
+						</tr>
+					</div>
+				</table>
+			</div>
 		</div>
 		<script src="shopping.js"></script>
 	</body>

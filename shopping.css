@@ -1,4 +1,32 @@
 body {
-    background-color: #232323;
-    color: #cecfc3;
+    background-color: #1B2838;
+    color: #FFFFFF;
+}
+#title {
+    background-color:#171A21;
+    padding: 10px 5px 5px 20px;
+    margin-bottom: 20px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    margin-top: -100px;
+}
+
+#cart{
+    margin-top: 100px;
+}
+
+/* Images */
+img {
+    width: 300px;
+}
+
+img:hover {
+    border: 5px solid #5DAEDD;
+}
+
+/* Tables */
+th, td {
+    padding-left: 20px;
 }
