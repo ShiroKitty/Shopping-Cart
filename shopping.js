@@ -1,45 +1,119 @@
+/**********************
+ * Cart functionality *
+ **********************/
 var start = new Vue({
     el: '#cart',
     data: {
+        totalCost: 0.00,
         cartItems: 
-        [
-            {name: 'RimWorld', numOrdered: 0, price: 29.99, total: 0, imgSrc: 'http://cdn.akamai.steamstatic.com/steam/apps/294100/header.jpg?t=1484073238'},
-            {name: 'Civilization VI', numOrdered: 0, price: 59.99, total: 0, imgSrc: 'http://cdn.akamai.steamstatic.com/steam/apps/289070/header.jpg?t=1510266672'},
-            {name: 'Undertale', numOrdered: 0, price: 9.99, total: 0, imgSrc: 'http://cdn.akamai.steamstatic.com/steam/apps/391540/header.jpg?t=1503525486'},
-            {name: 'Wasteland 2', numOrdered: 0, price: 39.99, total: 0, imgSrc: 'http://cdn.akamai.steamstatic.com/steam/apps/240760/header.jpg?t=1504032524'},
-            {name: 'Star Wars: Knights of the Old Republic 2', numOrdered: 0, total: 0, price: 9.99, imgSrc: 'http://cdn.akamai.steamstatic.com/steam/apps/208580/header.jpg?t=1489550586'},
-            {name: 'Stardew Valley', numOrdered: 0, price: 14.99, total: 0, imgSrc: 'http://cdn.akamai.steamstatic.com/steam/apps/413150/header.jpg?t=1493674185'}
-        ]
-    },
+        [/*----------------------Beginning---------------------*/
+            {
+                name: 'RimWorld', 
+                numOrdered: 0, 
+                price: 29.99, 
+                total: 0.00, 
+                stock: 15,
+                dStock: 15,
+                imgSrc: 'images/rimworld.jpg'
+            },
+            {
+                name: 'Civilization VI',
+                numOrdered: 0,
+                price: 59.99,
+                total: 0.00,
+                stock: 12,
+                dStock: 12,
+                imgSrc: 'images/civilization.jpg'
+            },
+            {
+                name: 'Undertale', 
+                numOrdered: 0, 
+                price: 9.99, 
+                total: 0.00, 
+                stock: 30,
+                dStock: 30,
+                imgSrc: 'images/undertale.jpg'
+            },
+            {
+                name: 'Wasteland 2', 
+                numOrdered: 0, 
+                price: 39.99, 
+                total: 0.00, 
+                stock: 12, 
+                dStock: 12,
+                imgSrc: 'images/wasteland.jpg'
+            },
+            {
+                name: 'Star Wars: Knights of the Old Republic 2',
+                numOrdered: 0, 
+                total: 0.00, 
+                price: 9.99,
+                stock: 4,
+                dStock: 4,
+                imgSrc: 'images/starwars.jpg'
+            },
+            {
+                name: 'Stardew Valley', 
+                numOrdered: 0, 
+                total: 0.00,
+                price: 14.99,
+                stock: 20,
+                dStock: 20,
+                imgSrc: 'images/stardew.jpg'
+            }
+        ]/*-------------------End of Object Array--------------------*/
+    }, 
     methods: {
         addToCart(item){
-            item.numOrdered++;
-            item.total = item.numOrdered * item.price;
+            if(item.stock > 0){
+                item.numOrdered++;
+                item.total = item.numOrdered * item.price;
+                item.total = item.total.toFixed(2);
+                item.stock--;
+                this.totalCost = parseFloat((this.totalCost + item.price).toFixed(2));
+            }
+            else if((item.numOrdered == 30)){
+                alert("Really? You want more than 30 copies of Undertale? (-_-)");
+            }
+            else{
+                alert("Looks like you won't be getting any more of these! (^_^)");
+            }
         },
         removeFromCart(item){
-            item.numOrdered--;
-            if(item.numOrdered >= 0){
+            if((item.numOrdered > 0)){
+                item.numOrdered--;
                 item.total = item.numOrdered * item.price;
+                item.total = item.total.toFixed(2);
+                item.stock++; 
+                this.totalCost = parseFloat((this.totalCost - item.price).toFixed(2));
             }
-            if(item.numOrdered < 0){
-                item.numOrdered = 0;
+        },
+        resetCart(){
+            this.totalCost = 0;
+            for (i = 0; i < this.cartItems.length; i++){
+                this.cartItems[i].total = 0;
+                this.cartItems[i].numOrdered = 0;
+                this.cartItems[i].stock = this.cartItems[i].dStock;
             }
+        }, 
+        getCurrency(value){/* Formats price to appear as currency */
+            var currency = '$' + ((value / 100) * 100).toFixed(2);
+            return currency;
         }
     }
 });
 
+/*********************************
+ * Vuejs code for theme swapping *
+ *********************************/
 var changeTheme = new Vue({
     el: '#title',
     methods: {
         steam(){
-            document.getElementById("cTheme").href = "cSteam.css";
+            document.getElementById("cTheme").href = "themes/cSteam.css";
         },
         steel(){
-            document.getElementById("cTheme").href = "cSteel.css";
+            document.getElementById("cTheme").href = "themes/cSteel.css";
         }
     }
-});
-
-window.addEventListener("load", function onLoad(){
-
 });

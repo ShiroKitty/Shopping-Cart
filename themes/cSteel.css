@@ -1,0 +1,68 @@
+/***********************************
+* This stylesheet adds a steel and *
+* red color scheme                 *
+***********************************/
+
+body {
+    background-color: #E4D9D9;
+    color: black;
+}
+/* Title Bar */
+#title {
+    background-color:#887E7E;
+    border-bottom: #EB0E0E 2px solid;
+}
+/* image colors */
+img:hover {
+    border: 5px solid #EB0E0E;
+}
+/* table colors */
+table, th{
+    border: 2px solid black;
+}
+
+th {
+    background-color: #634F4F;
+    color: #E4D9D9;
+}
+
+td {
+    background-color: #887E7E;
+    border-right: 2px solid black;
+}
+tr {
+    border-bottom: 2px solid rgba(255, 0, 0, 0);
+}
+.topB{
+    border-top: 2px solid black;
+}
+tr:hover{
+    border-bottom: 2px solid #B30808;
+}
+/* Faux button colors */
+.tBtn:hover {
+    background-color: #EB0E0E;
+}
+/* Buttons */
+#btnSteel{
+    background-color: #E4D9D9;
+    color: black;
+}
+#btnSteel:hover {
+    background-color: #EB0E0E;
+    color: black;
+}
+#btnSteam{
+    background-color: #1B2838;
+}
+#btnSteam:hover {
+    background-color: #5DAEDD;
+    color: black;
+}
+#resetBtn {
+    background-color: #634F4F;
+}
+#resetBtn:hover {
+    background-color: #EB0E0E;
+    color: black;
+}

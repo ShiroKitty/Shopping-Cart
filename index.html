@@ -2,8 +2,8 @@
 <html>
 	<head>
 		<!-- 
-			Developer: Tj Liggett 
-		-->
+			Coded by Tj Liggett. 
+									-->
 		<meta charset="UTF-8">
 		<title>Shopping Cart - Steam Sale</title>
 		<!-- Bootstrap-->
@@ -13,22 +13,23 @@
 		<!-- Main stylesheet -->
 		<link rel="stylesheet" type="text/css" href="main.css">
 		<!-- Stylesheet responsible for changing color scheme -->
-		<link id="cTheme" rel="stylesheet" type="text/css" href="cSteam.css">
+		<link id="cTheme" rel="stylesheet" type="text/css" href="themes\cSteam.css">
 	</head>
 	<body>
 		
 		<div class="container">
 			<div id="title">
-				<h1>Games Sale</h1>
-				<button class="btn btn-default" id="btnSteam" v-on:click="steam()">Steam</button>
+				<h1>Games For Sale</h1>
 				<button class="btn btn-default" id="btnSteel" v-on:click="steel()">Steel</button>
+				<button class="btn btn-default" id="btnSteam" v-on:click="steam()">Steam</button>
 			</div>
 			<div id="cart">
 				<div class="row">
 					<div v-for="items in cartItems">
-						<div class="col-sm">
+						<div class="col-sm" class="game">
 							<img v-bind:src="items.imgSrc" class="more" v-on:click="addToCart(items)">
-							<p>Price: ${{ items.price }}</p>
+							<p class="gamePrice">Price: ${{items.price}}</p>
+							<p class="gameStock">Stock: {{items.stock}}</p>
 						</div>
 					</div>
 				</div>
@@ -44,15 +45,18 @@
 					<!-- Table rows added by Vuejs -->
 					<tr v-for="rows in cartItems">
 						<td>{{ rows.name }}</td>
-						<td>{{ rows.numOrdered }}</td>
-						<td class="totalCost">{{ rows.total}}</td>
+						<td class="centerMe">{{ rows.numOrdered }}/{{rows.dStock}}</td>
+						<td class="totalCost">{{getCurrency(rows.total)}}</td>
 						<td class="tBtn more" v-on:click="addToCart(rows)">+</td>
 						<td class="tBtn less" v-on:click="removeFromCart(rows)">-</td>
 					</tr>
 					<tr class="topB"></tr>
 				</table>
-				<h2>Total: {{  }}</h2>
-			</div>
+				<div id="bottom">
+					<h2>Total: {{getCurrency(totalCost)}}</h2>
+					<button class="btn btn-default" id="resetBtn" v-on:click="resetCart()">Reset Cart</button>
+				</div>
+			</div> <!--End of #cart-->
 		</div>
 		<script src="shopping.js"></script>
 	</body>

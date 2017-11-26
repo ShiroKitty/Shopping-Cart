@@ -1,0 +1,64 @@
+/***********************************
+* This stylesheet adds a steam     *
+* inspired color scheme            *
+***********************************/
+
+body {
+    background-color: #1B2838;
+    color: #FFFFFF;
+}
+/* Title Bar */
+#title {
+    background-color:#171A21;
+}
+/* image colors */
+img:hover {
+    border: 5px solid #5DAEDD;
+}
+
+/* table colors */
+table, th{
+    border: 2px solid black;
+}
+
+th {
+    background-color: #171A21;
+}
+
+td {
+    background-color: #212121;
+    border-right: 2px solid black; 
+}
+tr {
+    border-bottom: 2px solid rgba(33, 32, 78, 0);
+}
+tr:hover{
+    border-bottom: 2px solid #5DAEDD;
+}
+/* Faux button colors */
+.tBtn:hover {
+    background-color: #5DAEDD;
+}
+/* Buttons */
+#btnSteel{
+    background-color: #E4D9D9;
+    color: black;
+}
+#btnSteel:hover {
+    background-color: #EB0E0E;
+    color: black;
+}
+#btnSteam{
+    background-color: #1B2838;
+}
+#btnSteam:hover {
+    background-color: #5DAEDD;
+    color: black;
+}
+#resetBtn {
+    background-color: #171A21;
+}
+#resetBtn:hover {
+    background-color: #5DAEDD;
+    color: black;
+}

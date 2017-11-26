@@ -1,4 +1,10 @@
+/****************************************
+* This is the main stylesheet.          *
+* The code here changes anything not    *
+* related to the color of the page.     *
+****************************************/
 
+/* Title Bar */
 #title {
     padding: 10px 5px 5px 20px;
     margin-bottom: 20px;
@@ -8,13 +14,37 @@
     z-index: 1;
     margin-top: -100px;
 }
-
+#title h1{
+    float: left;
+}
+#title button{
+    float: right;
+    margin-left: 10px;
+}
+/* Bottom of Page */
+#bottom h2 {
+    float: left;
+}
+#bottom #resetBtn {
+    float: right;
+    margin-right: 150px;
+}
+/* Cart Items */
 #cart{
     margin-top: 100px;
 }
-
+.col-sm img{
+    display: block;
+}
+.col-sm .gamePrice {
+    float: left;
+}
+.col-sm .gameStock {
+    float: right;
+}
 /* Images */
 img {
+    border: 5px solid rgba(33, 32, 78, 0);
     width: 300px;
 }
 
@@ -34,7 +64,12 @@ th {
 th, td {
     padding: 0px 20px 0px 20px;
 }
-
+.centerMe {
+    text-align: center;
+}
+.totalCost {
+    text-align: right;
+}
 /* Faux Buttons */
 .tBtn{
     text-align: center;
@@ -43,7 +78,7 @@ th, td {
     -ms-user-select: none;
     user-select: none;
 }
-
 .tBtn:hover {
     cursor: pointer;
 }
+/* Buttons */
