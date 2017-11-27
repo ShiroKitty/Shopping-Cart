@@ -50,6 +50,7 @@ tr:hover{
 }
 #btnSteam{
     background-color: #1B2838;
+    color: #FFFFFF;
 }
 #btnSteam:hover {
     background-color: #5DAEDD;
@@ -57,6 +58,7 @@ tr:hover{
 }
 #resetBtn {
     background-color: #171A21;
+    color: #FFFFFF;
 }
 #resetBtn:hover {
     background-color: #5DAEDD;

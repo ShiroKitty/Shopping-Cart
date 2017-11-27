@@ -98,6 +98,8 @@ var start = new Vue({
         }, 
         getCurrency(value){/* Formats price to appear as currency */
             var currency = '$' + ((value / 100) * 100).toFixed(2);
+            //console.log(typeof(value));
+            //console.log(value);
             return currency;
         }
     }
@@ -110,10 +112,18 @@ var changeTheme = new Vue({
     el: '#title',
     methods: {
         steam(){
-            document.getElementById("cTheme").href = "themes/cSteam.css";
+            var theme = "themes/cSteam.css";
+            document.getElementById("cTheme").href = theme;
         },
         steel(){
-            document.getElementById("cTheme").href = "themes/cSteel.css";
+            var theme = "themes/cSteel.css";
+            document.getElementById("cTheme").href = theme;
         }
     }
+});
+
+
+//loads cookies on page load
+window.addEventListener("load", function loadCookies(){
+
 });
