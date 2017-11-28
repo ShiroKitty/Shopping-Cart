@@ -15,7 +15,14 @@ body {
 img:hover {
     border: 5px solid #5DAEDD;
 }
-
+/* Links */
+a {
+    color: #FFFFFF;
+}
+a:hover {
+    color: #5DAEDD;
+    text-decoration: none;
+}
 /* table colors */
 table, th{
     border: 2px solid black;

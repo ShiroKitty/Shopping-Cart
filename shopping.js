@@ -114,16 +114,21 @@ var changeTheme = new Vue({
         steam(){
             var theme = "themes/cSteam.css";
             document.getElementById("cTheme").href = theme;
+            document.cookie = 'themes/cSteam.css;'
         },
         steel(){
             var theme = "themes/cSteel.css";
             document.getElementById("cTheme").href = theme;
+            document.cookie = 'themes/cSteel.css;';
         }
     }
 });
 
 
-//loads cookies on page load
+//this loads the theme stored inside a cookie
 window.addEventListener("load", function loadCookies(){
-
+    var theme = document.cookie;
+    if(theme.length > 0){
+        document.getElementById("cTheme").href = theme;
+    }
 });

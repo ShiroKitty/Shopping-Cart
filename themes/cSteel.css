@@ -16,6 +16,14 @@ body {
 img:hover {
     border: 5px solid #EB0E0E;
 }
+/* Links */
+a {
+    color: black;
+}
+a:hover {
+    color: #EB0E0E;
+    text-decoration: none;
+}
 /* table colors */
 table, th{
     border: 2px solid black;
